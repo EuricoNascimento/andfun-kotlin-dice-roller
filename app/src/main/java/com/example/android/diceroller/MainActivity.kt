@@ -17,38 +17,43 @@
 package com.example.android.diceroller
 
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.android.diceroller.databinding.ActivityMainBinding
 import java.util.*
+import com.example.android.diceroller.R.drawable.*
+
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var diceImage: ImageView
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
 
-        val rollButton: Button = findViewById(R.id.roll_button)
-        rollButton.setOnClickListener {
-            rollDice()
+        binding.diceImage.setOnClickListener {
+            blayblade(randomrandomrandomrandomrandom)
         }
-
-        diceImage = findViewById(R.id.dice_image)
     }
 
-    private fun rollDice() {
-        val randomInt = Random().nextInt(6) + 1
-        val drawableResource = when (randomInt) {
-            1 -> R.drawable.dice_1
-            2 -> R.drawable.dice_2
-            3 -> R.drawable.dice_3
-            4 -> R.drawable.dice_4
-            5 -> R.drawable.dice_5
-            else -> R.drawable.dice_6
-        }
+    fun blayblade(mx: Int) {
+        val minecraft=when(Random().nextInt(mx)+1){
+            numero1 -> dice_1
+            numero2 -> dice_2
+            numero3 -> dice_3
+            numero4 -> dice_4
+            numero5 -> dice_5
+            else -> dice_6}
+        binding.diceImage.setImageResource(minecraft)
+    }
 
-        diceImage.setImageResource(drawableResource)
+    companion object {
+        const val numero1 = 1
+        const val numero2 = 2
+        const val numero3 = 3
+        const val numero4 = 4
+        const val numero5 = 5
+        const val randomrandomrandomrandomrandom = 9999
     }
 }
