@@ -38,13 +38,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun blayblade(mx: Int) {
-        val minecraft=when(Random().nextInt(mx)+1){
+        val minecraft=when(Random().nextInt(mx)+1) {
             numero1 -> dice_1
             numero2 -> dice_2
             numero3 -> dice_3
             numero4 -> dice_4
             numero5 -> dice_5
-            else -> dice_6}
+            else -> dice_6
+        }
         binding.diceImage.setImageResource(minecraft)
     }
 
