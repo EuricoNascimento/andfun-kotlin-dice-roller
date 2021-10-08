@@ -28,33 +28,25 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.diceImage.setOnClickListener {
-            blayblade(randomrandomrandomrandomrandom)
+        binding.rollButton.setOnClickListener {
+            blayblade()
         }
     }
 
-    fun blayblade(mx: Int) {
-        val minecraft=when(Random().nextInt(mx)+1) {
-            numero1 -> dice_1
-            numero2 -> dice_2
-            numero3 -> dice_3
-            numero4 -> dice_4
-            numero5 -> dice_5
+    private fun blayblade() {
+        val minecraft=when(Random().nextInt(5) + 1) {
+            1 -> dice_1
+            2 -> dice_2
+            3 -> dice_3
+            4 -> dice_4
+            5 -> dice_5
             else -> dice_6
         }
         binding.diceImage.setImageResource(minecraft)
     }
 
-    companion object {
-        const val numero1 = 1
-        const val numero2 = 2
-        const val numero3 = 3
-        const val numero4 = 4
-        const val numero5 = 5
-        const val randomrandomrandomrandomrandom = 9999
-    }
 }

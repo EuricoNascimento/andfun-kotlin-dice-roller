@@ -30,7 +30,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_gravity="center"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="107dp"
+        android:layout_marginTop="387dp"
         app:srcCompat="@drawable/empty_dice"
         tools:srcCompat="@drawable/dice_1" />
 
